@@ -1,0 +1,25 @@
+#!/bin/python3
+
+import math
+import os
+from collections import Counter as count
+
+# Complete the makingAnagrams function below.
+def makingAnagrams(s1, s2):
+    x = count(s1)
+    y = count(s2)
+    return sum((x-y).values())+sum((y-x).values())
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s1 = input()
+
+    s2 = input()
+
+    result = makingAnagrams(s1, s2)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
